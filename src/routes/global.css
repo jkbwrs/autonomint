@@ -1,0 +1,98 @@
+    @font-face {
+        font-family: 'SpaceGrotesk';
+        src: url('../SpaceGrotesk-Bold.woff') format('woff');
+        font-weight: bold;
+    }
+
+    @font-face {
+        font-family: 'SpaceGrotesk';
+        src: url('../SpaceGrotesk-Medium.woff') format('woff');
+        font-weight: 500;
+    }
+
+    @font-face {
+        font-family: 'SpaceGrotesk';
+        src: url('../SpaceGrotesk-Light.woff') format('woff');
+        font-weight: 300;
+    }
+
+    @font-face {
+        font-family: 'SpaceGrotesk';
+        src: url('../SpaceGrotesk-SemiBold.woff') format('woff');
+        font-weight: 600;
+    }
+
+    @font-face {
+        font-family: 'SpaceGrotesk';
+        src: url('../SpaceGrotesk-Regular.woff') format('woff');
+        font-weight: normal;
+    }
+
+
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        position: relative;
+        font-family: "SpaceGrotesk", Arial, Helvetica, sans-serif;
+        color: var(--black);
+        background-color: var(--lightgrey);
+        scroll-behavior: smooth;
+    }
+
+    * {
+        box-sizing: border-box;
+        position: relative;
+        font-size: 16px;
+    }
+
+    :root {
+        --lightgrey: #E4E8E6;
+        --black: #000;
+        --darkgrey: #5B5B5B;
+        --green: #ABFFDE
+    }
+
+    h1 {
+        font-size: 5.2vw;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 62px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    h3 {
+        font-size: 42px;
+        text-transform: uppercase;
+        margin: 0;
+    }
+
+    span {
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        color: transparent;
+        font-size: inherit;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .button {
+        padding: 12px 24px;
+        background-color: var(--green);
+        border: 1px solid var(--green);
+        text-decoration: none;
+        color: var(--black);
+        border-radius: 8px;
+        transition: background-color 400ms ease;
+    }
+
+    .button:hover {
+        background-color: transparent;
+    }
