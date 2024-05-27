@@ -1,45 +1,72 @@
 <script lang="ts">
+    import { onMount } from "svelte";
 
+    let nav: HTMLElement;
+    let scrollY = 0;
+
+    function handleScroll() {
+        const maxScroll = 200;
+        const progress = Math.min(scrollY / maxScroll, 1);
+
+        const blurValue = progress * 12;
+        const saturateValue = 100 + progress * 60;
+        const backgroundColorValue = `rgba(228, 232, 230, ${0.6 * progress})`;
+
+        nav.style.backdropFilter = `blur(${blurValue}px) saturate(${saturateValue}%)`;
+        nav.style.WebkitBackdropFilter = `blur(${blurValue}px) saturate(${saturateValue}%)`;
+        nav.style.backgroundColor = backgroundColorValue;
+    }
+
+    onMount(() => {
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    });
 </script>
 
+<svelte:window bind:scrollY on:scroll={handleScroll} />
 
-<nav>
+<nav bind:this={nav}>
     <div class="inner">
         <a href="/" class="logo">
-            <img src="../autonomint.svg" alt="Logo" width="140">
+            <img src="../autonomint.svg" alt="Logo" width="140" />
         </a>
         <div class="links">
-            <a href="" class="link">
+            <a href="#" class="link">
                 Testnet Live · Join
-                <img src="../arrow.svg" alt="" class="arrow" width="20">
+                <img src="../arrow.svg" alt="" class="arrow" width="20" />
             </a>
-            <a href="" class="link">
+            <a href="#" class="link">
                 Docs
-                <img src="../arrow.svg" alt="" class="arrow" width="20">
+                <img src="../arrow.svg" alt="" class="arrow" width="20" />
             </a>
-            <a href="" class="link">
+            <a href="#" class="link">
                 Leaderboard
-                <img src="../arrow.svg" alt="" class="arrow" width="20">                
+                <img src="../arrow.svg" alt="" class="arrow" width="20" />
             </a>
         </div>
         <div class="socials">
             <a href="https://x.com/autonomint" target="_blank" class="social">
-                <img src="./x.svg" alt="X">
+                <img src="./x.svg" alt="X" />
             </a>
-            <a href="" target="_blank" class="social">
-                <img src="./github.svg" alt="Github">
+            <a href="#" target="_blank" class="social">
+                <img src="./github.svg" alt="Github" />
             </a>
-            <a href="https://discord.com/invite/4QFaUTwjkU" target="_blank" class="social">
-                <img src="./discord.svg" alt="Discord">
+            <a
+                href="https://discord.com/invite/4QFaUTwjkU"
+                target="_blank"
+                class="social"
+            >
+                <img src="./discord.svg" alt="Discord" />
             </a>
-            <a href="" class="button">Enter Dapp</a>
+            <a href="#" class="button">Enter Dapp</a>
         </div>
     </div>
 </nav>
 
-
 <style>
-
     nav {
         width: 100%;
         height: 60px;
@@ -49,9 +76,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        backdrop-filter: blur(12px) saturate(160%);
-        -webkit-backdrop-filter: blur(12px) saturate(160%);
-        
     }
 
     .inner {
@@ -77,7 +101,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 6px; 
+        gap: 6px;
     }
 
     .arrow {
