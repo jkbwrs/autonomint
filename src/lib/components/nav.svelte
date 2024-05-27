@@ -43,12 +43,15 @@
     nav {
         width: 100%;
         height: 60px;
-        position: absolute;
+        position: fixed;
         inset: 0 0 auto 0;
         z-index: 100;
         display: flex;
         justify-content: center;
         align-items: center;
+        backdrop-filter: blur(12px) saturate(160%);
+        -webkit-backdrop-filter: blur(12px) saturate(160%);
+        
     }
 
     .inner {
