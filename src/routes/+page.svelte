@@ -58,11 +58,11 @@
     <div class="buttons">
         <div class="block">
             <div class="text-block" style="font-size: 8px; color: var(--lightgrey)">Secured spot in the</div>
-            <img src="./acc.svg" width="100" alt="Mode Yield Accelerator Logo" class="acce-logo">
+            <img src="../acc.svg" width="100" alt="Mode Yield Accelerator Logo" class="acce-logo">
         </div>
         <div class="block">
             <div class="text-block" style="font-size: 8px; color: var(--lightgrey)">Winners of</div>
-            <img src="./soonami.webp" width="80" alt="Mode Yield Accelerator Logo" style="margin-top: -4px">
+            <img src="../soonami.webp" width="80" alt="Soonami Logo" style="margin-top: -4px">
             <div class="text-block" style="font-size: 8px; color: var(--lightgrey)">Venturethon</div>
         </div>
     </div>
