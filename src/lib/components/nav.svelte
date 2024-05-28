@@ -10,10 +10,9 @@
 
         const blurValue = progress * 12;
         const saturateValue = 100 + progress * 60;
-        const backgroundColorValue = `rgba(228, 232, 230, ${0.6 * progress})`;
+        const backgroundColorValue = `rgba(228, 232, 230, ${0.8 * progress})`;
 
         nav.style.backdropFilter = `blur(${blurValue}px) saturate(${saturateValue}%)`;
-        nav.style.WebkitBackdropFilter = `blur(${blurValue}px) saturate(${saturateValue}%)`;
         nav.style.backgroundColor = backgroundColorValue;
     }
 

@@ -6,6 +6,7 @@
 <footer>
 
     <div class="inner">
+        <img src="../autonomint.svg" alt="Autonomint Logo" width="100" style="filter: invert(100%)">
         <div class="socials">
             <a href="" target="_blank" class="social">
                 <img src="./x.svg" alt="X">
@@ -45,6 +46,7 @@
         justify-content: center;
         align-items: center;
         gap: 20px;
+        filter: invert(100%);
     }
 
 </style>

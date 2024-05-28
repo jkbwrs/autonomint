@@ -23,28 +23,34 @@
     };
 </script>
 
+
 <div class="container">
-    {#each pins as pin, index}
-        <input
-            class="pin"
-            type="number"
-            maxlength="1"
-            placeholder="_"
-            bind:this={inputs[index]}
-            bind:value={pins[index]}
-            on:input={(e) => handleInput(index, e)}
-            on:keydown={(e) => handleKeyDown(index, e)}
-        />
-    {/each}
-    <div class="redeem-button">Redeem Invite Code ➔</div>
+    <h3>Invite Code</h3>
+    <p class="subheadline">Already have an invite?</p>
+    <div class="pin-wrapper">
+        {#each pins as pin, index}
+            <input
+                class="pin"
+                type="number"
+                maxlength="1"
+                placeholder="_"
+                bind:this={inputs[index]}
+                bind:value={pins[index]}
+                on:input={(e) => handleInput(index, e)}
+                on:keydown={(e) => handleKeyDown(index, e)}
+            />
+        {/each}
+    </div>
+    <div class="redeem-button">Redeem Invite Code</div>
 </div>
 
 <style>
     .container {
+        height: 400px;
         display: flex;
-        gap: 10px;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         padding: 40px;
         background-color: #fff;
         border: 1px solid var(--darkgrey);
@@ -56,7 +62,14 @@
         height: 48px;
         text-align: center;
         font-size: 24px;
-        border: 1px solid var(--green);
+        border: 1px solid var(--darkgrey);
+        -moz-appearance: textfield;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
     }
 
     input:focus {
@@ -65,12 +78,27 @@
     }
 
     .redeem-button {
-        height: 40px;
+        width: 100%;
+        max-width: 300px;
+        height: 48px;
         display: flex;
         align-items: center;
+        justify-content: center;
         padding: 0 10px;
         border: 1px solid black;
         cursor: pointer;
+        text-align: center;
+    }
+
+    .pin-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 12px;
+        margin-bottom: 12px;
     }
 
 </style>

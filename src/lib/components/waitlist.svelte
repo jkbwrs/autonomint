@@ -7,12 +7,14 @@
 
 <section id="waitlist">
     <div class="inner">
-        <h3>Join Waitlist</h3>
-        <p>Be among the first ones to experience our Dapp. </p>
         <div class="forms">
             <form action="" class="container">
-                <input type="email" class="email" placeholder="Enter E-mail ID">
-                <button class="button">Join Waitlist</button>
+                <h3>Join Waitlist</h3>
+                <p class="subheadline">Be among the first ones to experience our Dapp. </p>
+                <div>
+                    <input type="email" class="email" placeholder="Enter E-mail ID">
+                    <button class="button">Join Waitlist</button>
+                </div>
             </form>
             <Pin />
         </div>
@@ -34,12 +36,12 @@
         width: 90%;
         max-width: 1200px;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        flex-direction: column;
     }
 
     .forms {
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
         justify-content: center;
@@ -49,10 +51,11 @@
     }
 
     .container {
+        height: 400px;
         display: flex;
-        gap: 10px;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
         padding: 40px;
         background-color: #fff;
         border: 1px solid var(--darkgrey);
@@ -62,6 +65,14 @@
     .email {
         height: 48px;
         width: 300px;
+        padding: 6px 12px;
+        border: 1px solid var(--darkgrey);
+        border-radius: 8px;
+    }
+
+    .email:focus {
+        outline: none;
+        border: 1px solid var(--black);
     }
 
 </style>
