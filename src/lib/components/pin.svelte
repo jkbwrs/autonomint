@@ -27,7 +27,7 @@
     {#each pins as pin, index}
         <input
             class="pin"
-            type="text"
+            type="number"
             maxlength="1"
             placeholder="_"
             bind:this={inputs[index]}
@@ -45,6 +45,10 @@
         gap: 10px;
         justify-content: center;
         align-items: center;
+        padding: 40px;
+        background-color: #fff;
+        border: 1px solid var(--darkgrey);
+        border-radius: 20px;
     }
 
     input {
@@ -68,4 +72,5 @@
         border: 1px solid black;
         cursor: pointer;
     }
+
 </style>

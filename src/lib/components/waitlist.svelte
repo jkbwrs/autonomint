@@ -10,7 +10,7 @@
         <h3>Join Waitlist</h3>
         <p>Be among the first ones to experience our Dapp. </p>
         <div class="forms">
-            <form action="">
+            <form action="" class="container">
                 <input type="email" class="email" placeholder="Enter E-mail ID">
                 <button class="button">Join Waitlist</button>
             </form>
@@ -25,7 +25,6 @@
     section {
         z-index: 10;
         padding: 100px 0;
-        background-color: var(--green);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -41,11 +40,23 @@
     }
 
     .forms {
-        display: flex;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
         justify-content: center;
         align-items: center;
         gap: 32px;
         margin-top: 60px;
+    }
+
+    .container {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        padding: 40px;
+        background-color: #fff;
+        border: 1px solid var(--darkgrey);
+        border-radius: 20px;
     }
 
     .email {
