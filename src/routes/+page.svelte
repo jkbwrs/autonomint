@@ -117,6 +117,10 @@
         object-position: center top;
     }
 
+    video::-webkit-media-controls {
+        display:none !important;
+    }
+
     main {
         height: 200vh;
         display: flex;
