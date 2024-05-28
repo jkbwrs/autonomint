@@ -47,7 +47,7 @@
 <Nav />
 
 <aside>
-    <video controls={false} preload="auto" muted autoplay={false} playsinline bind:this={video}>
+    <video controls={false} preload="auto" muted autoplay={false} playsinline loop={false} bind:this={video}>
         <source src="./bg.mp4" type="video/mp4">
         <!-- <source src="./bg.webm" type="video/webm"> -->
         Your browser does not support the video tag.
@@ -64,9 +64,9 @@
 </header>
 
 <main>
-    <h2>Get 100% synthetic LTV from a <br> <span>stablecoin</span> lending protocol</h2>
-    <h2><span>Earn yield</span> on our <br> ‘Colored’ stablecoin USDa</h2>
-    <h2>Get upto 5X leverage while <br> <span>earning derivative</span> fees</h2>
+    <h2>Get 100% synthetic LTV from a <span>stablecoin</span> lending protocol</h2>
+    <h2><span>Earn yield</span> on our ‘Colored’ stablecoin USDa</h2>
+    <h2>Get upto 5X leverage while <span>earning derivative</span> fees</h2>
 </main>
 
 <Waitlist>
