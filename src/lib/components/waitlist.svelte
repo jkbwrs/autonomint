@@ -49,10 +49,12 @@
         justify-content: center;
         align-items: center;
         flex-direction: column;
+        gap: 6px;
         padding: 40px;
         background-color: #fff;
         border: 1px solid var(--darkgrey);
         border-radius: 20px;
+        text-align: center;
     }
 
     .email {

@@ -55,11 +55,22 @@
 </aside>
 
 <header>
-    <p>The world’s first fully decentralized stablecoin protocol backed by decentralized derivatives.</p>
+    <div class="buttons">
+        <div class="block">
+            <div class="text-block" style="font-size: 8px; color: var(--lightgrey)">Secured spot in the</div>
+            <img src="./acc.svg" width="100" alt="Mode Yield Accelerator Logo" class="acce-logo">
+        </div>
+        <div class="block">
+            <div class="text-block" style="font-size: 8px; color: var(--lightgrey)">Winners of</div>
+            <img src="./soonami.webp" width="80" alt="Mode Yield Accelerator Logo" style="margin-top: -4px">
+            <div class="text-block" style="font-size: 8px; color: var(--lightgrey)">Venturethon</div>
+        </div>
+    </div>
+    <p style="max-width: 90%">The world’s first fully decentralized stablecoin protocol backed by decentralized derivatives.</p>
     <h1>Unlock the <span>Hidden</span> CAPITAL</h1>
     <div class="buttons">
         <a href="/#waitlist" class="button">Join Waitlist</a>
-        <a href="/#waitlist" class="button">Enter Invitecode</a>
+        <a href="/#waitlist" class="button">Enter Invite Code</a>
     </div>
 </header>
 
@@ -121,5 +132,58 @@
         gap: 12px;
         margin-top: 20px;
     }
+
+    .block {
+        height: 42px;
+        grid-column-gap: 8px;
+        grid-row-gap: 8px;
+        -webkit-backdrop-filter: blur(4px);
+        backdrop-filter: blur(4px);
+        background-color: var(--black);
+        color: #fff;
+        border-radius: 40px;
+        margin-bottom: 10px;
+        padding: 10px 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        text-transform: uppercase;
+    }
+
+    .acce-logo {
+        width: 50px;
+    }
+
+    .block::before {
+         content: '';
+         position: absolute;
+         top: -1px;
+         left: -1px;
+         right: -1px;
+         bottom: -1px;
+         border-radius: inherit;
+         box-shadow: 0 0 10px var(--green);
+         animation: glowing 6s linear infinite;
+      }
+
+      @keyframes glowing {
+         0% {
+            box-shadow: 0 -2px 2px var(--green);
+         }
+         25% {
+            box-shadow: 2px 0 2px var(--green);
+         }
+         50% {
+            box-shadow: 0 2px 2px var(--green);
+         }
+         75% {
+            box-shadow: -2px 0 2px var(--green);
+         }
+         100% {
+            box-shadow: 0 -2px 2px var(--green);
+         }
+      }
+   
 
 </style>

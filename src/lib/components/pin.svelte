@@ -30,7 +30,7 @@
 
 <div class="container">
     <h3>Invite Code</h3>
-    <p class="subheadline">Already have an invite?</p>
+    <p class="subheadline">Already have an invite code?</p>
     <div class="pin-wrapper">
         {#each pins as pin, index}
             <input
@@ -45,7 +45,7 @@
             />
         {/each}
     </div>
-    <div class="redeem-button">Redeem Invite Code</div>
+    <div class="button" style="width: 100%; max-width: 300px">Redeem Invite Code</div>
 </div>
 
 <style>
@@ -59,6 +59,8 @@
         background-color: #fff;
         border: 1px solid var(--darkgrey);
         border-radius: 20px;
+        text-align: center;
+        gap: 6px;
     }
 
     input {
@@ -82,26 +84,6 @@
         outline: none;
     }
 
-    .redeem-button {
-        width: 100%;
-        max-width: 300px;
-        height: 48px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 10px;
-        border: 1px solid black;
-        cursor: pointer;
-        text-align: center;
-        border-radius: 8px;
-        transition: all 400ms ease;
-    }
-
-    .redeem-button:hover {
-        background-color: var(--green);
-        border: 1px solid var(--green);;
-    }
-
     .pin-wrapper {
         display: flex;
         justify-content: space-between;
@@ -110,7 +92,7 @@
         width: 100%;
         max-width: 300px;
         margin-top: 12px;
-        margin-bottom: 12px;
+        margin-bottom: 6px;
     }
 
 </style>
