@@ -58,13 +58,13 @@
 <header>
     <div class="buttons">
         <div class="block">
-            <div class="text-block" style="font-size: 8px; color: var(--lightgrey)">Secured spot in the</div>
+            <div class="text-block" style="font-size: 10px; color: var(--lightgrey)">Secured spot in the</div>
             <img src="../acc.svg" width="100" alt="Mode Yield Accelerator Logo" class="acce-logo">
         </div>
         <div class="block">
-            <div class="text-block" style="font-size: 8px; color: var(--lightgrey)">Winners of</div>
+            <div class="text-block" style="font-size: 10px; color: var(--lightgrey)">Winners of</div>
             <img src="../soonami.webp" width="80" alt="Soonami Logo" style="margin-top: -4px">
-            <div class="text-block" style="font-size: 8px; color: var(--lightgrey)">Venturethon</div>
+            <div class="text-block" style="font-size: 10px; color: var(--lightgrey)">Venturethon</div>
         </div>
     </div>
     <p style="max-width: 90%">The world’s first fully decentralized stablecoin protocol backed by decentralized derivatives.</p>
