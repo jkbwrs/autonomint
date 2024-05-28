@@ -14,6 +14,7 @@
     })
 
     onMount(() => {
+        video.pause()
         currentTime.subscribe(value => {
             if (video && video.readyState >= 2) {
                 video.currentTime = value
@@ -48,7 +49,7 @@
 
 <aside>
     <video controls={false} preload="auto" muted autoplay={false} playsinline loop={false} bind:this={video}>
-        <source src="./bg.mp4" type="video/mp4">
+        <source src="../bg.mp4" type="video/mp4">
         <!-- <source src="./bg.webm" type="video/webm"> -->
         Your browser does not support the video tag.
     </video>
@@ -183,6 +184,12 @@
          100% {
             box-shadow: 0 -2px 2px var(--green);
          }
+      }
+
+      @media screen and (max-width: 400px) {
+        .buttons {
+            flex-direction: column;
+        }
       }
    
 
