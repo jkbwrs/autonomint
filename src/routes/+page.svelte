@@ -36,7 +36,7 @@
 <Nav />
 
 <aside>
-    <video controls={false} preload="auto" muted autoplay playsinline bind:this={video} on:canplay={() => video.play()}>
+    <video controls={false} preload="auto" muted autoplay playsinline bind:this={video}>
         <source src="./bg.mp4" type="video/mp4">
         <!-- <source src="./bg.webm" type="video/webm"> -->
         Your browser does not support the video tag.
