@@ -5,27 +5,38 @@
     import Footer from "$lib/components/footer.svelte";
     import Waitlist from "$lib/components/waitlist.svelte";
     import Pin from "$lib/components/pin.svelte";
+    import { tweened } from "svelte/motion"
 
     let video: HTMLVideoElement;
     let pin: string = ""
+    const currentTime = tweened(0, {
+        duration: 10,
+    })
 
     onMount(() => {
-        const handleScroll = ({ y }: { y: { progress: number } }) => {
-            if (video && video.readyState > 0) {
-                const currentTime = video.duration * y.progress;
-                if (Math.abs(video.currentTime - currentTime) > 0.1) {
-                    video.currentTime = currentTime;
-                }
+        currentTime.subscribe(value => {
+            if (video && video.readyState >= 2) {
+                video.currentTime = value
             }
-        };
+        })
 
-        scroll(handleScroll, {
+        const handleScroll = ({ y }: { y: { progress: number } }) => {
+            if (video && video.readyState >= 2) {
+                const newTime = video.duration * y.progress
+                currentTime.set(newTime)
+            }
+        }
+
+        const unscroll = scroll(handleScroll, {
             target: document.documentElement,
             offset: ["start start", "end end"]
-        });
-    });
+        })
 
-    $: console.log(pin)
+        return () => {
+            unscroll()
+        }
+    })
+
 </script>
 
 <svelte:head>
