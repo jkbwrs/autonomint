@@ -80,4 +80,10 @@
         margin-bottom: 12px;
     }
 
+    @media screen and (max-width: 1000px) {
+        .forms {
+            grid-template-columns: 1fr;
+        }
+    }
+
 </style>
