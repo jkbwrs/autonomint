@@ -5,39 +5,44 @@
     import Footer from "$lib/components/footer.svelte";
     import Waitlist from "$lib/components/waitlist.svelte";
     import Pin from "$lib/components/pin.svelte";
-    import { tweened } from "svelte/motion"
+    import { tweened } from "svelte/motion";
 
     let video: HTMLVideoElement;
-    let pin: string = ""
+    let pin: string = "";
     const currentTime = tweened(0, {
         duration: 10,
-    })
+    });
 
     onMount(() => {
-        video.pause()
+        video.pause();
         currentTime.subscribe(value => {
             if (video && video.readyState >= 2) {
-                video.currentTime = value
+                video.currentTime = value;
             }
-        })
+        });
 
         const handleScroll = ({ y }: { y: { progress: number } }) => {
             if (video && video.readyState >= 2) {
-                const newTime = video.duration * y.progress
-                currentTime.set(newTime)
+                const viewportHeight = window.innerHeight;
+                const documentHeight = document.documentElement.scrollHeight;
+                const scrollHeight = documentHeight - viewportHeight;
+                const maxScroll = scrollHeight - 10;
+
+                const adjustedProgress = Math.min(y.progress * (scrollHeight / maxScroll), 1);
+                const newTime = video.duration * adjustedProgress;
+                currentTime.set(newTime);
             }
-        }
+        };
 
         const unscroll = scroll(handleScroll, {
             target: document.documentElement,
-            offset: ["start start", "end end"]
-        })
+            offset: ["start start", "end -10px"]
+        });
 
         return () => {
-            unscroll()
-        }
-    })
-
+            unscroll();
+        };
+    });
 </script>
 
 <svelte:head>
@@ -59,7 +64,7 @@
     <div class="buttons">
         <div class="block">
             <div class="text-block" style="font-size: 10px; color: var(--lightgrey)">Secured spot in the</div>
-            <img src="../acc.svg" width="105" alt="Mode Yield Accelerator Logo" class="acce-logo">
+            <img src="../acc.svg" width="60" alt="Mode Yield Accelerator Logo" class="acce-logo">
         </div>
         <div class="block">
             <div class="text-block" style="font-size: 10px; color: var(--lightgrey)">Winners of</div>
@@ -157,7 +162,7 @@
     }
 
     .acce-logo {
-        width: 50px;
+        width: 60px;
     }
 
     .block::before {
@@ -193,6 +198,10 @@
       @media screen and (max-width: 400px) {
         .buttons {
             flex-direction: column;
+        }
+
+        .acce-logo {
+            width: 50px;
         }
       }
    

@@ -48,17 +48,17 @@
         </div>
         <div class="socials">
             <a href="https://x.com/autonomint" target="_blank" class="social">
-                <img src="./x.svg" alt="X" />
+                <img src="./x.svg" alt="X" height="100%" />
             </a>
             <a href="#" target="_blank" class="social">
-                <img src="./github.svg" alt="Github" />
+                <img src="./github.svg" alt="Github" height="100%" />
             </a>
             <a
                 href="https://discord.com/invite/4QFaUTwjkU"
                 target="_blank"
                 class="social"
             >
-                <img src="./discord.svg" alt="Discord" />
+                <img src="./discord.svg" alt="Discord" height="100%" />
             </a>
             <a href="#" class="button">Enter Dapp</a>
         </div>
@@ -119,9 +119,19 @@
         gap: 20px;
     }
 
+    .social {
+        width: 20px;
+        height: 16px;
+    }
+
     @media screen and (max-width: 1000px) {
         .links {
             display: none;
+        }
+
+        .social {
+            width: 16px;
+            height: 14px;
         }
     }
 </style>
