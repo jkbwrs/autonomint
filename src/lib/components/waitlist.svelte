@@ -51,7 +51,9 @@
         flex-direction: column;
         gap: 6px;
         padding: 40px;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         border: 1px solid var(--darkgrey);
         border-radius: 20px;
         text-align: center;
@@ -63,6 +65,7 @@
         padding: 6px 12px;
         border: 1px solid var(--darkgrey);
         border-radius: 8px;
+        text-align: center;
     }
 
     .email:focus {

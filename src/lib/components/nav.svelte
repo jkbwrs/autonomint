@@ -134,4 +134,10 @@
             height: 14px;
         }
     }
+
+    @media screen and (max-width: 500px) {
+        .social {
+            display: none;
+        }
+    }
 </style>

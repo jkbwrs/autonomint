@@ -56,6 +56,7 @@
         margin: 0;
         font-weight: 800;
         max-width: 90%;
+        color: #fff;
     }
 
     span {
@@ -67,6 +68,7 @@
 
     .subheadline {
         margin: 0 0 20px 0;
+        color: #fff;
     }
 
     a {

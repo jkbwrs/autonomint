@@ -56,7 +56,9 @@
         align-items: center;
         flex-direction: column;
         padding: 40px;
-        background-color: #fff;
+        background-color: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
         border: 1px solid var(--darkgrey);
         border-radius: 20px;
         text-align: center;

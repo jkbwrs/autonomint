@@ -23,6 +23,7 @@
 
         const handleScroll = ({ y }: { y: { progress: number } }) => {
             if (video && video.readyState >= 2) {
+                video.pause();
                 const viewportHeight = window.innerHeight;
                 const documentHeight = document.documentElement.scrollHeight;
                 const scrollHeight = documentHeight - viewportHeight;
@@ -147,7 +148,6 @@
         background-color: var(--black);
         color: #fff;
         border-radius: 40px;
-        margin-bottom: 10px;
         padding: 10px 16px;
         display: flex;
         justify-content: center;
@@ -190,9 +190,10 @@
          }
       }
 
-      @media screen and (max-width: 400px) {
+      @media screen and (max-width: 500px) {
         .buttons {
             flex-direction: column;
+            gap: 6px;
         }
 
         .acce-logo {
