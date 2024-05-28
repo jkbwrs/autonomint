@@ -4,9 +4,9 @@
             <form action="" class="container">
                 <h3>Join Waitlist</h3>
                 <p class="subheadline">Be among the first ones to experience our Dapp. </p>
-                <div>
+                <div class="wrapper">
                     <input type="email" class="email" placeholder="Enter E-mail ID">
-                    <button class="button">Join Waitlist</button>
+                    <button class="button" style="width: 100%">Join Waitlist</button>
                 </div>
             </form>
             <slot></slot>
@@ -66,6 +66,18 @@
     .email:focus {
         outline: none;
         border: 1px solid var(--black);
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        max-width: 300px;
+        margin-top: 12px;
+        margin-bottom: 12px;
     }
 
 </style>

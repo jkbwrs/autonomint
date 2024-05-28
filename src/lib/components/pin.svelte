@@ -68,6 +68,7 @@
         font-size: 24px;
         border: 1px solid var(--darkgrey);
         -moz-appearance: textfield;
+        border-radius: 8px;
     }
 
     input::-webkit-outer-spin-button,
@@ -92,6 +93,13 @@
         border: 1px solid black;
         cursor: pointer;
         text-align: center;
+        border-radius: 8px;
+        transition: all 400ms ease;
+    }
+
+    .redeem-button:hover {
+        background-color: var(--green);
+        border: 1px solid var(--green);;
     }
 
     .pin-wrapper {
