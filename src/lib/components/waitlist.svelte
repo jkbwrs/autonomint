@@ -1,10 +1,3 @@
-<script>
-    import Pin from "./pin.svelte";
-
-
-</script>
-
-
 <section id="waitlist">
     <div class="inner">
         <div class="forms">
@@ -16,7 +9,7 @@
                     <button class="button">Join Waitlist</button>
                 </div>
             </form>
-            <Pin />
+            <slot></slot>
         </div>
     </div>
 </section>

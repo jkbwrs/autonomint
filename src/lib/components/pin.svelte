@@ -1,26 +1,30 @@
 <script lang="ts">
-    let pins: string[] = ["", "", "", "", ""];
-    let inputs: HTMLInputElement[] = [];
+    export let code: string = ""
+
+    let pins: string[] = ["", "", "", "", ""]
+    let inputs: HTMLInputElement[] = []
 
     const handleInput = (index: number, event: Event) => {
-        const input = event.target as HTMLInputElement;
-        const value = input.value.trim();
+        const input = event.target as HTMLInputElement
+        const value = input.value.trim()
 
         if (/^\d$/.test(value)) {
-            pins[index] = value;
+            pins[index] = value
             if (index < inputs.length - 1) {
-                inputs[index + 1].focus();
+                inputs[index + 1].focus()
             }
         } else {
-            input.value = "";
+            input.value = ""
         }
-    };
+    }
 
     const handleKeyDown = (index: number, event: KeyboardEvent) => {
         if (event.key === "Backspace" && !pins[index] && index > 0) {
-            inputs[index - 1].focus();
+            inputs[index - 1].focus()
         }
-    };
+    }
+
+    $: code = pins.join("")
 </script>
 
 

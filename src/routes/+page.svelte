@@ -4,8 +4,10 @@
     import Nav from "$lib/components/nav.svelte";
     import Footer from "$lib/components/footer.svelte";
     import Waitlist from "$lib/components/waitlist.svelte";
+    import Pin from "$lib/components/pin.svelte";
 
     let video: HTMLVideoElement;
+    let pin: string = ""
 
     onMount(() => {
         const handleScroll = ({ y }: { y: { progress: number } }) => {
@@ -22,6 +24,8 @@
             offset: ["start start", "end end"]
         });
     });
+
+    $: console.log(pin)
 </script>
 
 <svelte:head>
@@ -32,7 +36,7 @@
 <Nav />
 
 <aside>
-    <video controls={false} muted={true} preload="auto" playsinline bind:this={video} >
+    <video controls={false} preload="auto" muted autoplay playsinline bind:this={video} on:canplay={() => video.play()}>
         <source src="./bg.mp4" type="video/mp4">
         <!-- <source src="./bg.webm" type="video/webm"> -->
         Your browser does not support the video tag.
@@ -54,7 +58,9 @@
     <h2>Get upto 5X leverage while <br> <span>earning derivative</span> fees</h2>
 </main>
 
-<Waitlist />
+<Waitlist>
+    <Pin bind:code={pin} />
+</Waitlist>
 
 <Footer />
 
