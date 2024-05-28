@@ -64,6 +64,14 @@
         font-size: 62px;
         text-transform: uppercase;
         margin: 0;
+        color: #fff;
+
+        & span {
+            -webkit-text-stroke-width: 1px;
+            -webkit-text-stroke-color: white;
+            color: transparent;
+            font-size: inherit;
+        }
     }
 
     h3 {
