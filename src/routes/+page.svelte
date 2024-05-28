@@ -48,12 +48,16 @@
 <svelte:head>
     <title>Autonomint</title>
     <meta name="description" content="The world’s first fully decentralized stablecoin protocol backed by decentralized derivatives.">
+    <meta name="twitter:title" content="Autonomint">
+    <meta name="twitter:description" content="The world’s first fully decentralized stablecoin protocol backed by decentralized derivatives.">
+    <meta name="twitter:image" content="....">
+    <meta name="twitter:card" content="summary_large_image">
 </svelte:head>
 
 <Nav />
 
 <aside>
-    <video controls={false} preload="auto" muted autoplay playsinline loop bind:this={video}>
+    <video controls={false} preload="auto" muted autoplay playsinline loop={false} bind:this={video}>
         <source src="../bg.mp4" type="video/mp4">
         <!-- <source src="./bg.webm" type="video/webm"> -->
         Your browser does not support the video tag.
